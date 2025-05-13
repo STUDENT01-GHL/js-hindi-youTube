@@ -21,7 +21,7 @@ console.log(anotherName);
 
 const newStringOne = "     hgfhfv"
 console.log(newStringOne);
-console.log(newStringOne.trim());
+console.lognew(StringOne.trim());
 
 const url = "https://google.com/suhani%30ghl"
 
