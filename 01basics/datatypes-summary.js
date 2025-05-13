@@ -37,3 +37,30 @@ const myFunction = function() {
 }
 
 console.log(typeof bigNumber);
+
+
+// +++++++++++++++++++++++++++++++++++
+
+// Memories -- Stack(Primitive) , Heap(Non-primitive)
+
+let myMehndiwork = "MehndiBySuhani"
+let anotherName = myMehndiwork  // here anothername is a copy
+
+anotherName = "Chai and Code"   
+
+console.log(myMehndiwork);
+console.log(anotherName);
+
+let userOne = {
+    email: "user1@google.com",
+    upi: "abc@ybl",
+}
+
+let userTwo = userOne
+
+userTwo.email = "s1@google.com"
+
+console.log(userOne.email);
+console.log(userTwo.email);
+
+
