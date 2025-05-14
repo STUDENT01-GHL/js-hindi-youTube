@@ -1,6 +1,6 @@
 // singleton -- while you are using constructor
 
-// here we are going to discuss object literals ---- for declaring an obje false,
+// here we are going to discuss object literals ---- for declaring an object
 
 const mySmb = Symbol("key1")
 
