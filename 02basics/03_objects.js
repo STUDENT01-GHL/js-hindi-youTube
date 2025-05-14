@@ -23,4 +23,30 @@ console.log(JsUser["full name"]);
 console.log(JsUser[mySmb]);
 
 
-JsUser.name = ""
+JsUser.name = "Suhu"
+ // Object.freeze(JsUser)
+JsUser.name = "Suhu"
+
+console.log(JsUser["name"])
+
+console.log(JsUser);
+
+// adding a function 
+
+JsUser.greetings = function() {
+    console.log("Hello JS User");
+    }
+
+    JsUser.greetingsTwo = function() {
+    console.log(`Hello JS User, ${this.name}`);                   // it is called string interpallution
+    }
+
+    
+ console.log(JsUser.greetings()); // gives the proper output
+ console.log(JsUser.greetingsTwo());
+
+  console.log(JsUser.greetings);    // gives the reference
+
+ 
+
+
