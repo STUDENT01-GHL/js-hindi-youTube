@@ -1,6 +1,6 @@
 //array   ----- []-> Brackets , ()-> Parentheses , {}-> Braces ---- storing multiple items under a single variable
 
-const myArr = [0 , 1 , 2 , 3 , 4 , 5] //these are elements and they can be a type of numbers , string or 
+const myArr = [0 , 1 , 2 , 3 , 4 , 5] //these are elements and they can be a type of numbers , string or mix
 
 console.log(myArr[2]);
 

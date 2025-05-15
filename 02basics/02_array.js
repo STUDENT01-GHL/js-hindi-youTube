@@ -5,7 +5,7 @@ const dc_heros = ["Batman" , "Fash", "Superman"]
 
 // console.log(mr_heros);
 
-const allHeros = mr_heros.concat(dc_heros)
+const allHeros = mr_heros.concat(dc_heros)   // merge two arrays
 console.log(allHeros);
 
 
@@ -17,7 +17,7 @@ console.log(all_new_heros);
 
 const another_arr = [2 , 5 , 5, 6 , [5 ,6, 7],[6 ,7], [5]]
 const real_another_array = another_arr.flat(Infinity)
-console.log(real_another_array);
+console.log(real_another_array);    // flat is used for merging more than one array
 
 
 console.log(Array.isArray("Suhani")); // for checking

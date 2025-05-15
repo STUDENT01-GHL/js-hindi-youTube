@@ -24,7 +24,7 @@ console.log(JsUser[mySmb]);
 
 
 JsUser.name = "Suhu"
- // Object.freeze(JsUser)
+ // Object.freeze(JsUser)    // for changing the value
 JsUser.name = "Suhu"
 
 console.log(JsUser["name"])
