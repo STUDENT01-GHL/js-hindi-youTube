@@ -1,10 +1,10 @@
 let score = false
-console.log(typeof score);
-console.log(typeof (score));
+console.log(typeof score);  // boolean
+console.log(typeof (score)); // boolean
 
 
-let valueInNumber = Number(score)
-console.log(typeof valueInNumber);
+let valueInNumber = Number(score)  
+console.log(typeof valueInNumber);  // number
 
 console.log(valueInNumber);   // it will be not a number
 
@@ -17,7 +17,7 @@ console.log(valueInNumber);   // it will be not a number
 let isLoggedIn = "Suhu"
 
 let booleanLoggedIn = Boolean(isLoggedIn)
-console.log(booleanLoggedIn);
+console.log(booleanLoggedIn);  // true
 
 // 1 => true ; 0 => false
 
@@ -26,7 +26,7 @@ console.log(booleanLoggedIn);
 let someNumber = 33
 let stringNumber =  String(someNumber)
 console.log(stringNumber);
-console.log(typeof stringNumber);
+console.log(typeof stringNumber);    // string
 
 
 
@@ -35,35 +35,35 @@ console.log(typeof stringNumber);
 
 let number = 5
 let negValue = -number
-console.log(negValue);
+console.log(negValue);  // -5
 
 
-console.log(3+3);
-console.log(3-3);
-console.log(3*3);
-console.log(3**3);
-console.log(3/3);
-console.log(3%3);
+console.log(3+3);   // 6
+console.log(3-3);   // 0
+console.log(3*3);   // 9
+console.log(3**3);  // 27
+console.log(3/3);   // 1
+console.log(3%3);   // 0
 
 
 let str1 = "hello"
 let str2 = " Suhani"
 let str3 = str1 + str2
-console.log(str3);
+console.log(str3);   // hello suhani
 
 
-console.log(2 + "4");
-console.log("2" + 4);
-console.log("1" + 2 + 2 + "2");
+console.log(2 + "4");  // 24
+console.log("2" + 4);  //24
+console.log("1" + 2 + 2 + "2"); // 1224
 
 
-console.log(+"");
-console.log(+true);
+console.log(+"");  // 0
+console.log(+true);  // 1
 
-let gameCounter = 100
+let gameCounter = 100  
 // gameCounter++;
 ++gameCounter;
-console.log(gameCounter);
+console.log(gameCounter);   // 101
 
 
 let a = 5

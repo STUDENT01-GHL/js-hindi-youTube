@@ -8,8 +8,8 @@ console.log(`Hello , My name is ${name} and I have started my ${work}`);
 const gameName = new String('Suhani-ghl')
 
 console.log(gameName[0]);
-console.log(gameName. __proto__);
-console.log(gameName.length);
+console.log(gameName. __proto__);  // {}
+console.log(gameName.length); 
 console.log(gameName.charAt(2));
 console.log(gameName.indexOf('a'));  //once go through with all the methods
 
@@ -21,7 +21,7 @@ console.log(anotherName);
 
 const newStringOne = "     hgfhfv"
 console.log(newStringOne);
-console.lognew(StringOne.trim());
+ //console.lognew(StringOne.trim());
 
 const url = "https://google.com/suhani%30ghl"
 

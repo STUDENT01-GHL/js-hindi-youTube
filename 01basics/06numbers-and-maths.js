@@ -8,7 +8,7 @@ console.log(balance.toString().length);
 console.log(balance.toFixed(2));    //can use this == toFixed() for making website
 
 const otherNumber = 123.5678    // if you are using a value greater then 5 then value will be changed if precision value is 3..
-console.log(otherNumber.toPrecision(4));    // imp property -- using a value less than 5 after (.) then value won,then be changed
+console.log(otherNumber.toPrecision(4));    // imp property -- using a value less than 5 after (.) then value won't be changed
 
 const hundreds = 10000000
 console.log(hundreds.toLocaleString('en-IN'));  
