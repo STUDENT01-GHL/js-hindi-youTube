@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grade Report</title>
+</head>
+<body>
+    <h1>Student Grade Report</h1>
+    <button onclick="generateReport()">Generate Report</button>
+    <pre id="result"></pre>
+
+    <script>
+        function generateReport() {
+            // variables
+
+            let student = {
+                name: "Suhani" , 
+                marks: [76 , 88 , 69]
+            };
+
+            // operators and functions
+            // for getting total marks
+
+            function getTotal (marks) {
+                 let total = 0;
+                 for (let i = 0; i < marks.length; i++) {
+                    total += marks[i];
+                    
+                 }
+                 return total;
+            }
+
+            const total = getTotal(student.marks);
+            const average = total / student.marks.length;
+
+
+            // conditionals 
+
+            let grade = "" ;
+            if(average >= 90) grade = "A" ; 
+            else if(average >= 75) grade = "B" ; 
+            else if(average => 60) grade = "C" ;
+            else grade = "D" ; 
+
+            // result
+
+            let report = `Name: ${student.name}\n`;
+      report += `Marks: ${student.marks.join(", ")}\n`;
+      report += `Total: ${total}\n`;
+      report += `Average: ${average.toFixed(2)}\n`;
+      report += `Grade: ${grade}`;
+
+      document.getElementById("result").textContent = report; 
+        }
+
+
+        //  first we made tags in hmtl
+        // second we have create a variable named student and made a function named getTotal
+        // average and then grade and atlast report
+    </script>
+</body>
+</html>
+
