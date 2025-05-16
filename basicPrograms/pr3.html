@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program - 3</title>
+</head>
+<body>
+    <h1>Print Repeating Letters Only Once</h1>
+
+    <label>Enter any word:</label>
+    <input type="text" id="text" placeholder="Enter any word">
+    <br /><br />
+    <button onclick="repeatLetter()">Click</button>
+
+    <h3>Repeating Letters:</h3>
+    <p id="output"></p>
+
+    <script>
+        function repeatLetter() {
+            const input = document.getElementById("text").value.toLowerCase();
+            let result = [];
+
+    for (let i = 0; i < input.length ; i++) {
+        const next = i + 1 ;
+        if (input[i] === input[next] ) {
+            result.push(input[i]);
+                }
+            }
+
+            document.getElementById("output").textContent = JSON.stringify(result) || "No repeating letters.";
+        }
+    </script>
+</body>
+</html>
