@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TASK - 2</title>
+</head>
+<body>
+  <h1>Program - 1</h1>
+  <h2>Letter Count</h2>
+
+  <label>Enter Text:</label>
+  <input type="text" id="text" placeholder="Enter any text" />
+  <br />
+  <br />
+  <button onclick="letterCount()">Click Here</button>
+
+  <pre id="demo"></pre>
+
+  <script>
+    function letterCount() {
+      const input = document.getElementById("text").value;
+
+      const letters = input.toLowerCase().split(""); 
+
+      const letterCount = {};
+
+      for (let letter of letters) {
+        if (letter !== " " && letter.match(/[a-z]/)) { 
+          if (letterCount[letter]) {
+            letterCount[letter]++;
+          } else {
+            letterCount[letter] = 1;
+          }
+        }
+      }
+
+      document.getElementById("demo").textContent = JSON.stringify(letterCount, null, 2);
+    }
+  </script>
+</body>
+</html>
