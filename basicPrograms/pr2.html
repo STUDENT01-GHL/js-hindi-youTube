@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Program -2</title>
+</head>
+<body>
+  <h1>Print letter 'l' only once</h1>
+
+  <label>Enter Text:</label>
+
+  <input type="text" id="text" placeholder="Enter any text">
+  <br/>
+  <br/>
+  <button onclick="printSingleLetter()">Click Me</button>
+  <pre id="demo"></pre>
+
+  <script>
+    function printSingleLetter() {
+      const input = document.getElementById("text").value;
+
+      if (input.includes('l')) {
+        document.getElementById("demo").textContent = 'l';
+      } else {
+        document.getElementById("demo").textContent = "No 'l' found.";
+      }
+    }
+  </script>
+</body>
+</html>
