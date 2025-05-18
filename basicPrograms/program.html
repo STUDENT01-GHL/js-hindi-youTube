@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Dos_List</title>
+</head>
+<body>
+    <input type="text" id="taskinput" placeholder="Add your Task here">
+    <button onclick="addTask()">Add</button>
+     <ul id="taskList"></ul>  
+      <!-- Unoredred list that will be hold task list --> -->
+
+    <script>
+         function addTask() {
+            const input = document.getElementById("taskinput");  // gets the input box
+            const taskText = input.value.trim(); // gets the Text user typed  // trim() is used for removing extra spaces 
+
+            if (taskText === '')return;  // if input is empty it stops the function
+
+            const li = document.createElement('li');  // creating a new li item 
+            li.textContent = taskText;  // sets the text of the list item to the user's input
+
+            li.addEventListener('click' , () => {
+                li.style.textDecorationx = "line-through"; // mark as completed
+            });
+
+            const deleteBtn = document.createElement('button');  // creates delete button 
+            deleteBtn.textContent = 'Delete';
+            deleteBtn.onclick = () => li.remove();
+
+            li.appendChild(deleteBtn);
+            document.getElementById('taskList').appendChild(li);  // adds the listitem to <ul> tag
+
+            input.value = '';
+         }
+    </script>
+</body>
+</html>
