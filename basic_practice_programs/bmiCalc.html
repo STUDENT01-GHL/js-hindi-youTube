@@ -1,0 +1,83 @@
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prog-2</title>
+
+    <style>
+        body {
+            font-family: cursive;
+            background-color: lightsalmon;
+            color: rgb(54, 12, 94);
+            text-align: center;
+            margin-top: 60px;
+            font-weight: bolder;
+        }
+
+        button {
+            background-color: bisque;
+            border-radius: 2px solid balck;
+            cursor: pointer;
+            color: blueviolet;
+            padding: 10px ;
+            font-size: 14px;  
+        }
+
+        input {
+            padding: 10px 30px;
+            font-family: monospace;
+        }
+
+        #result {
+            font-size: 18px;
+            font-weight: bold;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>BMI Generator</h1>
+
+    <label>Enter weight in KG:</label>
+    <input type="number" id="weight" placeholder="Enter your weight">
+    <br/>
+    <br/>
+    <label>Enter height in CM:</label>
+    <input type="number" id="height" placeholder="Enter your height">
+    <br/>
+    <br/>
+    <button onclick="getBMICalc()">Calculate</button>
+    <div id="result"></div>
+
+    <script>
+        function getBMICalc(){
+        const weight  = parseFloat(document.getElementById('weight').value);
+        const height  = parseFloat(document.getElementById('height').value);
+
+        if(!weight || !height || weight <= 0 || height <= 0){
+            document.getElementById('result').textContent ="Please , Enter a valid Number";
+            return;
+        }
+
+        // applying formula
+        const bmi = weight / (height * height) ;
+        let message = "";
+
+        if (bmi < 18.5) {
+            message = "UnderWeight";
+        } else if (bmi < 25) {
+            message = "NormalWeight";
+        } else if (bmi < 30) {
+            message = "OverWeight";
+        } else {
+            message = "obses";
+        }
+
+        document.getElementById('result').textContent = `Your BMI is ${bmi.toFixed(2)}, ${message}`;
+
+        }
+    </script>
+</body>
+</html>
