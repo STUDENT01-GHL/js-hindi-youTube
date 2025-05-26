@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Dos-List</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      body {
+        background-color: antiquewhite;
+        color: blueviolet;
+        margin: 0;
+        padding: 0;
+        font-size: 20px;
+        font-family: sans-serif;
+
+        height: 100vh;
+        display: flex;
+        /* using display , justify-content  , align-items , set   .container horizontally and vertically center  */
+        justify-content: center;
+        align-items: center;
+        /* horizontally center */
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .input-group {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+
+      input[type="text"] {
+        padding: 6px;
+        font-size: 16px;
+      }
+
+      button {
+        padding: 6px 10px;
+        /* 6 for top down , 10 for left right */
+        font-size: 16px;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 10px;
+      }
+
+      li {
+        margin-top: 4px;
+      }
+
+      .task-box {
+        display: flex;
+        align-items: center;
+        background-color: white;
+        border: 1px solid blueviolet;
+        border-radius: 3px;
+        padding: 2px;
+        gap: 5px; 
+         /* min-width: 300px; */
+        font-size: 14px;
+      }
+
+      .task-box span {
+        flex-grow: 1;
+        font-size: 12px;
+      }
+
+      .edit-icon {
+        font-size: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>To-Dos-List</h2>
+
+      <div class="input-group">
+        <input type="text" id="taskinput" placeholder="Enter your task" />
+        <button onclick="submitTask()">Submit</button>
+      </div>
+
+      <ul id="tasklist"></ul>
+    </div>
+
+    <script>
+      let editItem = null; // tracks the span
+
+      function submitTask() {
+        const taskInput = document.getElementById("taskinput");
+        const taskValue = taskInput.value.trim();
+        const submitBtn = document.querySelector("button");
+
+        if (taskValue === "") return;
+
+        if (editItem) {
+          editItem.textContent = taskValue;
+          editItem = null;
+          submitBtn.textContent = "Submit";
+          taskInput.value = "";
+          return;
+        }
+
+        const taskList = document.getElementById("tasklist");
+        const liItem = document.createElement("li"); // creates list item
+
+        // create a box to hold text content
+        const taskBox = document.createElement("div");
+        taskBox.className = "task-box";
+
+        const checkbox = document.createElement("input"); // creates checkbox
+        checkbox.type = "checkbox";
+        checkbox.style.marginRight = "8px";
+
+        const span = document.createElement("span"); // creates span
+        span.textContent = taskValue;
+
+        const editBtn = document.createElement("button"); // creates edit button
+        editBtn.innerHTML = '<i class="fa-solid fa-pen"></i>';
+        editBtn.title = "Edit task";
+        editBtn.style.marginLeft = "10px";
+        editBtn.style.fontSize = "8px";
+
+        editBtn.onclick = function () {
+          taskInput.value = span.textContent; // put current text
+          editItem = span;
+          submitBtn.textContent = "Update";
+        };
+
+        checkbox.onchange = function () {
+          editBtn.disabled = checkbox.checked;
+
+          if (checkbox.checked) {
+            span.style.textDecoration = "line-through"; // adds line
+            taskList.appendChild(liItem); // move to bottom
+          } else {
+            span.style.textDecoration = "none";
+            taskList.insertBefore(liItem, taskList.firstChild); // move to top
+          }
+        };
+
+        taskBox.appendChild(checkbox);
+        taskBox.appendChild(span);
+        taskBox.appendChild(editBtn);
+
+        liItem.appendChild(taskBox);
+        taskList.appendChild(liItem);
+        taskInput.value = "";
+      }
+    </script>
+  </body>
+</html>
