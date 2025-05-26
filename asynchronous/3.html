@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JS Functions</h1>
+    <h2>setTimeout() with a call back</h2>
+    <p id="demo"></p>
+
+    <script>
+        setTimeout(myFunc , 4000);  // remember -- don't use ()
+
+        function myFunc () {
+            document.getElementById("demo").innerHTML = "How are you??";
+        }
+    </script>
+</body>
+</html>
